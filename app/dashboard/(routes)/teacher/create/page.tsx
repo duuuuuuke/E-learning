@@ -1,6 +1,5 @@
 "use client";
 import * as z from "zod";
-import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
@@ -20,7 +19,7 @@ import Link from "next/link";
 import toast from "react-hot-toast";
 import { createCourse } from "@/actions/courseActions";
 
-export const formSchema = z.object({
+const formSchema = z.object({
     title: z.string().trim().min(1, { message: "Title is required" })
 });
 
